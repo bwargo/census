@@ -1,0 +1,26 @@
+{
+    "variables": {
+        "for": {
+            "label": "Census API FIPS 'for' clause",
+            "concept": "Census API Geography Specification",
+            "predicateType": "fips-for",
+            "predicateOnly": true
+        },
+        "in": {
+            "label": "Census API FIPS 'in' clause",
+            "concept": "Census API Geography Specification",
+            "predicateType": "fips-in",
+            "predicateOnly": true
+        },
+        "B20005E_045M": {
+            "label": "Margin of Error for!!Male:!!Other:!!With earnings:!!$55,000 to $64,999",
+            "concept": "B20005E.  Sex by Work Experience by Earnings for the Pop. 16+ Years (Native Hawaiian and Other Pacific Islander Alone)",
+            "predicateType": "int"
+        },
+        "B06004HPR_002M": {
+            "label": "Margin of Error for!!Born in Puerto Rico",
+            "concept": "B06004HPR.  Place of Birth (White Alone, Not Hispanic or Latino) in Puerto Rico",
+            "predicateType": "int"
+        }
+    }
+}
