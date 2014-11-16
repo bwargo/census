@@ -6,7 +6,7 @@ import grails.plugins.rest.client.RestBuilder
 import groovy.json.JsonSlurper
 
 def mongo = new GMongo("localhost:27017")
-def db = mongo.getDB("org.bwargo.census")
+def db = mongo.getDB("census")
 boolean write = true
 int i = 0
 int stateCode = 42 //PA
@@ -14,7 +14,7 @@ def rest = new RestBuilder()
 try {
     println "Starting County import..."
 
-    String finalURL = "http://api.org.bwargo.census.gov/data/2013/acs1/?key=d630ed4bf2adc05b83316e0f10ea1d6113bc9070&get=B04006_070E,NAME&for=county:*&in=state:" + stateCode
+    String finalURL = "http://api.census.gov/data/2013/acs1/?key=d630ed4bf2adc05b83316e0f10ea1d6113bc9070&get=B04006_070E,NAME&for=county:*&in=state:" + stateCode
 
     def resp = rest.get(finalURL)
     def slurper = new JsonSlurper()

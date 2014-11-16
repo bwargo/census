@@ -5,14 +5,14 @@ import com.gmongo.GMongo
 
 
 def mongo = new GMongo("localhost:27017")
-def db = mongo.getDB("org.bwargo.census")
+def db = mongo.getDB("census")
 boolean write = true
 int i = 0
 try {
     println "Starting States import..."
     File stateFile = new File("state.txt")
     stateFile.newWriter()
-    stateFile << new URL ("http://www.org.bwargo.census.gov/geo/reference/docs/state.txt").getText()
+    stateFile << new URL ("http://www.census.gov/geo/reference/docs/state.txt").getText()
     stateFile.eachLine { line ->
         String[] list_str = line.split("\\|")
         if(list_str[0].isInteger()){

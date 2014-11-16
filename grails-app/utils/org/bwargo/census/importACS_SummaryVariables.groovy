@@ -6,12 +6,12 @@ import groovy.json.JsonSlurper
 
 
 def mongo = new GMongo("localhost:27017")
-def db = mongo.getDB("org.bwargo.census")
+def db = mongo.getDB("census")
 boolean write = true
 
 try {
     println "Starting 2012 import..."
-    def slurper2012 = new JsonSlurper().parse("http://api.org.bwargo.census.gov/data/2012/acs1/variables.json".toURL())
+    def slurper2012 = new JsonSlurper().parse("http://api.census.gov/data/2012/acs1/variables.json".toURL())
     int i = 0
     Map variables = (Map) slurper2012.getAt("variables")
     variables.each { v ->
@@ -27,7 +27,7 @@ try {
     println(i+" documents written to variable collection for 2012")
 
     println "Starting 2013 import..."
-    def slurper = new JsonSlurper().parse("http://api.org.bwargo.census.gov/data/2013/acs1/variables.json".toURL())
+    def slurper = new JsonSlurper().parse("http://api.census.gov/data/2013/acs1/variables.json".toURL())
     variables = (Map) slurper.getAt("variables")
     i = 0
     variables.each { v ->
